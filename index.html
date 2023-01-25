@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vkzx.de</title>
+    
+    <style>
+      :root {
+        --saturation: 100%;
+        --luminosity: 50%;
+      }
+      @keyframes cubeRotation {
+        0% {
+          transform: rotateY(360deg);
+        }
+        25% {
+          transform: rotateY(270deg);
+        }
+        50% {
+          transform: rotateY(180deg);
+        }
+        75% {
+          transform: rotateY(90deg);
+        }
+        100% {
+          transform: rotateY(0deg);
+        }
+      }
+      @keyframes backgroundColorPalette {
+        0% {
+          background: hsl(0, var(--saturation), var(--luminosity));
+        }
+        25% {
+          background: hsl(90, var(--saturation), var(--luminosity));
+        }
+        50% {
+          background: hsl(180, var(--saturation), var(--luminosity));
+        }
+        75% {
+          background: hsl(270, var(--saturation), var(--luminosity));
+        }
+        100% {
+          background: hsl(360, var(--saturation), var(--luminosity));
+        }        
+      }
+      html {
+        height: 100%;
+      }
+      body {
+        min-height: 100%;
+      }
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        --luminosity: 30%;
+        animation: backgroundColorPalette 7s linear infinite reverse;
+      }
+      main {
+        perspective: 800px;
+        font-size: calc(80px + 10vw);
+        font-family: 'Courier New', Courier, monospace;
+        height: 2em;
+      }
+      #cube {
+        width: 2em;
+
+        transform-style: preserve-3d;
+        
+        --luminosity: 50%;
+        animation: cubeRotation 6s linear infinite;
+      }
+      
+      .side {
+        position: absolute;
+        width: 2em;
+        height: 2em;
+        text-align: center;
+        line-height: 2em;
+      }
+      
+      .front {
+        transform: translateZ(1em);
+        animation: backgroundColorPalette 11s linear infinite;
+      }
+      .top {
+        transform: rotateX(90deg) translateZ(1em);
+      }
+      .right {
+        transform: rotateY(90deg) translateZ(1em);
+        animation: backgroundColorPalette 5s linear infinite;
+      }
+      .left {
+        transform: rotateY(-90deg) translateZ(1em);
+        animation: backgroundColorPalette 13s linear infinite reverse;
+      }
+      .bottom {
+        transform: rotateX(-90deg) translateZ(1em);
+      }
+      .back {
+        transform: rotateY(-180deg) translateZ(1em);
+        animation: backgroundColorPalette 3s linear infinite reverse;
+      }
+
+    </style>
+  </head>
+  
+  <body>
+    <main>
+      <div id="cube">
+        <div class="side front">v</div>
+        <div class="side right">k</div>
+        <div class="side back">z</div>
+        <div class="side left">x</div>
+        <div class="side top">&nbsp;</div>
+        <div class="side bottom">&nbsp;</div>
+      </div>
+    </main>
+  </body>
+</html>
