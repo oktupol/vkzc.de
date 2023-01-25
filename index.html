@@ -44,6 +44,14 @@
           background: hsl(360, var(--saturation), var(--luminosity));
         }        
       }
+      @keyframes fontSize {
+        0% {
+          font-size: calc(50px + 8vw);
+        }
+        100% {
+          font-size: calc(80px + 10vw);
+        }
+      }
       html {
         height: 100%;
       }
@@ -60,9 +68,10 @@
       }
       main {
         perspective: 800px;
-        font-size: calc(80px + 10vw);
+        /* font-size: calc(80px + 10vw); */
         font-family: 'Courier New', Courier, monospace;
         height: 2em;
+        animation: fontSize 2s alternate infinite;
       }
       #cube {
         width: 2em;
@@ -70,7 +79,7 @@
         transform-style: preserve-3d;
         
         --luminosity: 50%;
-        animation: cubeRotation 6s linear infinite;
+        animation: cubeRotation 11s linear infinite;
       }
       
       .side {
@@ -83,7 +92,7 @@
       
       .front {
         transform: translateZ(1em);
-        animation: backgroundColorPalette 11s linear infinite;
+        animation: backgroundColorPalette 7s linear infinite;
       }
       .top {
         transform: rotateX(90deg) translateZ(1em);
