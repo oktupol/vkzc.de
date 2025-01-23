@@ -12,19 +12,19 @@
       }
       @keyframes cubeRotation {
         0% {
-          transform: rotateY(360deg);
+          transform: rotateY(360deg) rotateX(45deg);
         }
         25% {
-          transform: rotateY(270deg);
+          transform: rotateY(270deg) rotateX(-45deg);
         }
         50% {
-          transform: rotateY(180deg);
+          transform: rotateY(180deg) rotateX(45deg);
         }
         75% {
-          transform: rotateY(90deg);
+          transform: rotateY(90deg) rotateX(-45deg);
         }
         100% {
-          transform: rotateY(0deg);
+          transform: rotateY(0deg) rotateX(45deg);
         }
       }
       @keyframes backgroundColorPalette {
@@ -70,7 +70,7 @@
         perspective: 800px;
         font-family: 'Courier New', Courier, monospace;
         height: 2em;
-        animation: fontSize 2s alternate infinite;
+        animation: fontSize 29s alternate infinite;
       }
       #cube {
         width: 2em;
@@ -78,7 +78,7 @@
         transform-style: preserve-3d;
         
         --luminosity: 50%;
-        animation: cubeRotation 11s linear infinite;
+        animation: cubeRotation 23s linear infinite;
       }
       
       .side {
@@ -96,6 +96,7 @@
       }
       .top {
         transform: rotateX(90deg) translateZ(1em);
+        animation: backgroundColorPalette 17s linear infinite;
       }
       .right {
         transform: rotateY(90deg) translateZ(1em);
@@ -107,6 +108,7 @@
       }
       .bottom {
         transform: rotateX(-90deg) translateZ(1em);
+        animation: backgroundColorPalette 19s linear infinite;
       }
       .back {
         transform: rotateY(-180deg) translateZ(1em);
@@ -119,12 +121,12 @@
   <body>
     <main>
       <div id="cube">
-        <div class="side front">v</div>
-        <div class="side right">k</div>
-        <div class="side back">z</div>
-        <div class="side left">c</div>
-        <div class="side top">&nbsp;</div>
-        <div class="side bottom">&nbsp;</div>
+        <div class="side front">V</div>
+        <div class="side right">K</div>
+        <div class="side back">Z</div>
+        <div class="side left">C</div>
+        <div class="side top">D</div>
+        <div class="side bottom">E</div>
       </div>
     </main>
   </body>
